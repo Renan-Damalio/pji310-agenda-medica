@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Agenda Médica</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if (localStorage.getItem('logado') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+</head>
+<body>
+
+<h1>Agenda Médica</h1>
+
+<button onclick="logout()">Sair</button>
+
+<h2>Cadastrar Paciente</h2>
+<input id="p_nome" placeholder="Nome">
+<input id="p_tel" placeholder="Telefone">
+<input id="p_data" type="date">
+<button onclick="cadastrarPaciente()">Cadastrar</button>
+<h2>Pacientes</h2>
+<ul id="listaPacientes"></ul>
+
+<h2>Cadastrar Profissional</h2>
+<input id="pr_nome" placeholder="Nome">
+<input id="pr_esp" placeholder="Especialidade">
+<button onclick="cadastrarProfissional()">Cadastrar</button>
+<h2>Profissionais</h2>
+<ul id="listaProfissionais"></ul>
+
+<h2>Agendar Consulta</h2>
+<input id="c_data" type="date">
+<input id="c_hora" type="time">
+<input id="c_paciente" placeholder="ID Paciente">
+<input id="c_profissional" placeholder="ID Profissional">
+<button onclick="agendarConsulta()">Agendar</button>
+
+<h2>Consultas</h2>
+<ul id="lista"></ul>
+
+<h3>Editar Consulta</h3>
+<input id="edit_id" placeholder="ID da consulta">
+<input id="edit_data" type="date">
+<input id="edit_hora" type="time">
+<input id="edit_paciente" placeholder="ID Paciente">
+<input id="edit_profissional" placeholder="ID Profissional">
+<button onclick="editarConsulta()">Salvar Alteração</button>
+
+
+<script src="app.js"></script>
+</body>
+</html>

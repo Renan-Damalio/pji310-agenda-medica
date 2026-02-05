@@ -1,0 +1,26 @@
+name: CI - Agenda Médica
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Instalar dependências
+        run: |
+          cd backend
+          npm install
+
+      - name: Executar testes
+        run: |
+          cd backend
+          npm test
