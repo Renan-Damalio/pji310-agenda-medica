@@ -92,6 +92,6 @@ npm start
 ```bash
 cd frontend
 npm install
-´´´
+```
 Clicar com botão direito do mouse no arquivo **index.html** ou **login.html** e selecionar "Open with Live Server".
 
